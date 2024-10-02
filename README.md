@@ -25,7 +25,7 @@ Geliştirilebilir Kod: Açık kaynaklı yapısıyla topluluk katkılarına açı
 
 🤝 Katkıda Bulunma
 
-Bu projeye katkıda bulunmak isterseniz, kodu gözden geçirebilir veya pull request yapabilirsiniz. Katkıda bulunmaya ve yıldız atmayı unutmayınız!
+Bu projeye katkıda bulunmak isterseniz, kodu gözden geçirebilir veya pull request yapabilirsiniz. Katkıda bulunmaya ve yıldız (star) atmayı unutmayınız!
 
 📄 Lisans
 
