@@ -25,8 +25,8 @@ Geliştirilebilir Kod: Açık kaynaklı yapısıyla topluluk katkılarına açı
 
 🤝 Katkıda Bulunma
 
-Bu projeye katkıda bulunmak isterseniz, kodu gözden geçirebilir veya pull request yapabilirsiniz. Katkıda bulunmaya ve yıldız (star) atmayı unutmayınız!
+Bu projeye katkıda bulunmak isterseniz, kodu gözden geçirebilir veya pull request yapabilirsiniz. Katkıda bulunmak için yıldız (star)  atmayı unutmayınız!
 
 📄 Lisans
 
-Bu projeyi kullanmak için Apache License 2.0 lisansını kullanabilirsiniz. Tabii ki altyapıyı kullanabilirsiniz, ama "Coded by [isminiz]" şeklinde bir atıfta bulunmanızı rica ediyoruz.
+Bu proje Apache License 2.0 ile korunmaktadır. Altyapıyı kullanabilirsiniz, ancak lütfen "Coded by [isminiz]" şeklinde atıfta bulunmayı unutmayın.
