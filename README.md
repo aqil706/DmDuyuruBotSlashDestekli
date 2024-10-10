@@ -30,3 +30,7 @@ Bu projeye katkıda bulunmak isterseniz, kodu gözden geçirebilir veya pull req
 📄 Lisans
 
 Bu proje Apache License 2.0 ile korunmaktadır. Altyapıyı kullanabilirsiniz, ancak lütfen "Coded by [isminiz]" şeklinde atıfta bulunmamayı unutmayın.
+
+# 🎉 Yenilikler
+
+- 🆕 **Bota sesliye girme komutu eklendi**: Kanal ID'sini girdiğiniz anda bot belirtilen sesli kanala katılır.
