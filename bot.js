@@ -1,8 +1,15 @@
 const { Client, GatewayIntentBits, Events, EmbedBuilder, REST, Routes } = require('discord.js');
+const { joinVoiceChannel } = require('@discordjs/voice'); // Ses kanalları için gerekli
 const config = require('./config.js'); // Token ve sunucu ID'sini burada tanımlayabilirsin
 
 const client = new Client({
-  intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.GuildMembers, GatewayIntentBits.DirectMessages],
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMembers,
+    GatewayIntentBits.DirectMessages,
+    GatewayIntentBits.GuildVoiceStates // Ses kanallarını dinleyebilmek için eklendi
+  ],
   partials: ['CHANNEL'] // DM'leri dinlemek için gerekli
 });
 
@@ -25,6 +32,18 @@ const commands = [
       },
     ],
   },
+  {
+    name: 'sesliye-gir',
+    description: 'Belirtilen ses kanalına girer.',
+    options: [
+      {
+        type: 3, // STRING
+        name: 'id',
+        description: 'Ses kanalı ID\'si',
+        required: true,
+      },
+    ],
+  }
 ];
 
 // Komutları Discord API'sine kaydet
@@ -46,6 +65,7 @@ client.on(Events.InteractionCreate, async (interaction) => {
 
   const { commandName } = interaction;
 
+  // DM duyurusu komutu
   if (commandName === 'dm-duyuru') {
     const duyuruMesaji = interaction.options.getString('mesaj');
 
@@ -71,6 +91,30 @@ client.on(Events.InteractionCreate, async (interaction) => {
     } catch (error) {
       console.error('Üyeleri getirirken hata oluştu:', error);
       await interaction.reply('DM duyurusu gönderilirken bir hata oluştu.');
+    }
+  }
+
+  // Sesli kanala girme komutu
+  if (commandName === 'sesliye-gir') {
+    const channelId = interaction.options.getString('id');
+    const channel = await interaction.guild.channels.fetch(channelId);
+
+    if (!channel || channel.type !== 2) { // 2, ses kanalı tipini belirtir
+      return interaction.reply('Geçersiz ses kanalı ID\'si.');
+    }
+
+    try {
+      // Sesli kanala bağlanma
+      joinVoiceChannel({
+        channelId: channel.id,
+        guildId: interaction.guild.id,
+        adapterCreator: interaction.guild.voiceAdapterCreator
+      });
+
+      await interaction.reply(`Bot başarıyla ses kanalına katıldı: ${channel.name}`);
+    } catch (error) {
+      console.error('Ses kanalına katılırken hata oluştu:', error);
+      await interaction.reply('Bot ses kanalına katılamadı.');
     }
   }
 });
