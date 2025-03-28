@@ -1,4 +1,4 @@
 module.exports = {
-  token: 'YOUR_BOT_TOKEN', // Bot tokeniniz
-  clientId: 'YOUR_CLIENT_ID', // Botunuzun client ID'si
+  token: 'MTI0OTMyNjA3NTE4MDQ4MjYyMQ.GAtnWe.i41viicbx8AEBPoKCuBdeWXsa9vI_OR4jvbkyc', // Bot tokeniniz
+  clientId: '1249326075180482621', // Botunuzun client ID'si
 };
